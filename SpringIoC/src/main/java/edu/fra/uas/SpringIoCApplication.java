@@ -1,9 +1,9 @@
 package edu.fra.uas;
 
 import edu.fra.uas.v1instantiating.MasterV1;
-//import edu.fra.uas.v2setter.Drilling;
-//import edu.fra.uas.v2setter.Journeyman;
-//import edu.fra.uas.v2setter.MasterV2;
+import edu.fra.uas.v2setter.Drilling;
+import edu.fra.uas.v2setter.Journeyman;
+import edu.fra.uas.v2setter.MasterV2;
 //import edu.fra.uas.v3autowired.MasterV3;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -32,12 +32,12 @@ public class SpringIoCApplication {
             @Override
             public void run(String... args) throws Exception {
                 // v1instantiating
-                masterV1.delegateWork();
+//                masterV1.delegateWork();
 
                 // v2setter
-//                MasterV2 masterV2 = new MasterV2();
-//                masterV2.setJourneymanAndWork(new Journeyman(), new Drilling());
-//                masterV2.delegateWork();
+                MasterV2 masterV2 = new MasterV2();
+                masterV2.setJourneymanAndWork(new Journeyman(), new Drilling());
+                masterV2.delegateWork();
 
                 // v3autowired
 //                masterV3.delegateWork();
